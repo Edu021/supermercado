@@ -1,0 +1,78 @@
+
+.form-1 {
+    margin: 150px;
+    padding: 60px;
+    border-radius: 10px;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.form-cad-user {
+    padding: 30px;
+    width: 500px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 5px; 
+}
+
+.form-cad-prod {
+    padding: 30px;
+    width: 800px;
+}
+
+.form-cad-pedido-fornecedor {
+    padding: 30px;
+    width: auto;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+}
+
+.user-icon {
+    height: 30px;
+    width: 30px;
+}
+
+.cards-menu {
+    justify-content: center;
+    margin-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cards-menu-img {
+    margin-bottom: auto;
+}
+
+.card {
+    padding: 10px;
+    border-radius: 15px;
+}.card:hover {
+    border: 5px solid purple;
+    background-color: azure;
+    cursor: pointer;
+}
+
+.form-filtrar-prod {
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.form-filtrar-prod-campos {
+    margin-right: 7px;
+}
+
+.menu-body {
+    background-image: url('');
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+}
+
+.close-img {
+    opacity: 0.7;
+}.close-img:hover {
+    opacity: 1;
+}
