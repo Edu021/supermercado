@@ -15,7 +15,7 @@
             $codigo_caixa = $caixa->id_compra;
             echo "nao ta setado";
         }
-        header("Location: http://localhost/supermercado/caixa?codigo=$codigo_caixa&preparado=1");
+        header("Location: http://3.21.113.127/supermercado/caixa?codigo=$codigo_caixa&preparado=1");
         die();
     }
     
@@ -37,7 +37,7 @@
             $codigo = $row_array[$i]['lote'];
             mysqli_query($conexao, "UPDATE tb_mercadoria SET qntd_lote = qntd_lote - $quantidade WHERE cod_barra = $codigo;");
         }
-        header("Location: http://localhost/supermercado/caixa");
+        header("Location: http://3.21.113.127/supermercado/caixa");
     }
     mysqli_close($conexao);
 ?>

@@ -6,7 +6,7 @@ var tudo = []
 window.onload = () => {
   // GET PEDIDOS
 
-  fetch('http://localhost/supermercado/api/api_pedidos_venda.php')
+  fetch('http://3.21.113.127/supermercado/api/api_pedidos_venda.php')
   .then(src => {
     return src.json();
   })
@@ -18,7 +18,7 @@ window.onload = () => {
 
   // GET ITENS DO PEDIDO
 
-  fetch('http://localhost/supermercado/api/api_itens_venda.php')
+  fetch('http://3.21.113.127/supermercado/api/api_itens_venda.php')
   .then(src => {
     return src.json();
   })
@@ -145,7 +145,7 @@ function tudoDaTabela(pedido) {
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                          <form action="http://localhost/supermercado/api/api_pedidos_venda.php?finalizar=${cliente.pedidos[i].codigo}" method="POST">
+                          <form action="http://3.21.113.127/supermercado/api/api_pedidos_venda.php?finalizar=${cliente.pedidos[i].codigo}" method="POST">
                             <input type="submit" class="btn btn-danger" value="Finalizar">
                           </form>
                         </div>

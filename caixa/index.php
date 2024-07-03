@@ -1,7 +1,7 @@
 <?php
   session_start();
   if(!isset($_SESSION['user']) && !isset($_SESSION['permissao'])) {
-    header("Location: http://localhost/supermercado/login");
+    header("Location: http://3.21.113.127/supermercado/login");
   } else {
     // CONCEDE ACESSO A PÁGINA CASO SEJA UM ADMINISTRADOR
     if($_SESSION['permissao'] === 'caixa' or 'administrador') { ?>
@@ -18,7 +18,7 @@
 
 <body>
 <nav class="navbar navbar-dark bg-dark">
-            <div class="container d-flex justify-content-center"> <a class="navbar-brand" href="http://localhost/supermercado/menu/">
+            <div class="container d-flex justify-content-center"> <a class="navbar-brand" href="http://3.21.113.127/supermercado/menu/">
               <i class="fa d-inline fa-lg fa-circle-o"></i>
               <b> MERCADO FICTÍCIO</b></a> 
               </a>
@@ -26,7 +26,7 @@
               <?php echo $_SESSION['user']; ?>
               <i class="fa fa-user" aria-hidden="true"></i>
               </a>
-            <a class="navbar-brand" href="http://localhost/supermercado/efetuar_logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></i></a>
+            <a class="navbar-brand" href="http://3.21.113.127/supermercado/efetuar_logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></i></a>
             </div>
           </nav>
 
@@ -61,14 +61,14 @@
           <div class="row mb-2"> 
             
             <div class="col-md-6">
-              <form action="http://localhost/supermercado/api/api_caixa.php" method="POST">
+              <form action="http://3.21.113.127/supermercado/api/api_caixa.php" method="POST">
                 <input type="text" name="codigo" id="cod_compra" style="display: none;">
                 <input type="submit" class="btn btn-secondary btn-block" value="Iniciar">
               </form>
 
               </div>
               <div class="col-md-6">
-                <form action="http://localhost/supermercado/caixa" method="POST" id="reset_form">
+                <form action="http://3.21.113.127/supermercado/caixa" method="POST" id="reset_form">
                   <input type="submit" class="btn btn-info btn-block" form="reset_form" value="Limpar tudo">
                 </form>
               </div>
@@ -153,12 +153,12 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="http://localhost/supermercado/scripts/caixa.js"></script>
+  <script src="http://3.21.113.127/supermercado/scripts/caixa.js"></script>
 </body>
 
 </html>
 <?php } else {
-      header("Location: http://localhost/supermercado/menu");
+      header("Location: http://3.21.113.127/supermercado/menu");
     }
   }
 ?>

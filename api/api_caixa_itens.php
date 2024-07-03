@@ -32,7 +32,7 @@
         $resultado = mysqli_fetch_assoc($query);
         if(mysqli_num_rows($query) == 0) {
             // PRODUTO NÃO EXISTE
-            header("Location: http://localhost/supermercado/caixa?erro=not_found&codigo=$codigo_caixa");
+            header("Location: http://3.21.113.127/supermercado/caixa?erro=not_found&codigo=$codigo_caixa");
         } else {
             // PRODUTO EXISTE
             $query2 = mysqli_query($conexao, "select c.tb_caixa_compra_id_compra caixa, m.cod_barra lote, m.nm_produto nome, c.quantidade, m.vlr_venda_varejo valor from tb_itens_caixa c inner join tb_mercadoria m on c.tb_mercadoria_id_produto = m.id_mercadoria and c.tb_caixa_compra_id_compra = $codigo_caixa and m.cod_barra = $lote;");
@@ -51,7 +51,7 @@
                 }
                 
             }
-            header("Location: http://localhost/supermercado/caixa?codigo=$codigo_caixa");
+            header("Location: http://3.21.113.127/supermercado/caixa?codigo=$codigo_caixa");
         }
 
     }

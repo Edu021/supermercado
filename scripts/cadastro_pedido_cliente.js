@@ -2,7 +2,7 @@ var produtos = [];
 
 window.onload = () => {
   console.log('pagina carregada');
-  fetch('http://localhost/supermercado/api/api_estoque.php')
+  fetch('http://3.21.113.127/supermercado/api/api_estoque.php')
   .then(src => {
     return src.json();
   })

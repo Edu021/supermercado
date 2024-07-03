@@ -44,10 +44,10 @@
                 $comando = "insert into tb_itens_compra(nm_produto,quant_produto,vlr_unit,id_pedido_compra) values('$nomes[$i]',$quantidades[$i],$valores[$i],$id->id);";
                 mysqli_query($conexao, $comando);
             }
-            header("Location: http://localhost/supermercado/cadastro_pedido_fornecedor?resultado=sucesso");
+            header("Location: http://3.21.113.127/supermercado/cadastro_pedido_fornecedor?resultado=sucesso");
         } else {
             // FALHA AO CADASTRAR
-            header("Location: http://localhost/supermercado/cadastro_pedido_fornecedor?resultado=erro");
+            header("Location: http://3.21.113.127/supermercado/cadastro_pedido_fornecedor?resultado=erro");
         }
         die();
     }
@@ -56,7 +56,7 @@
     if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['finalizar'])) {
         $id = $_GET['finalizar'];
         mysqli_query($conexao, "update tb_pedidos_compra set status = 'Finalizado' where id_pedido_compra = $id;");
-        header("Location: http://localhost/supermercado/listar_fornecedor_pedidos");
+        header("Location: http://3.21.113.127/supermercado/listar_fornecedor_pedidos");
     }
 
     mysqli_close($conexao);

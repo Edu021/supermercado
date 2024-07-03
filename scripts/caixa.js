@@ -6,15 +6,15 @@ var totalCompra = 0.00;
 if (codigo !== '') {
   formItens = document.getElementById('form_itens');
   formItens.method = 'POST';
-  formItens.action = `http://localhost/supermercado/api/api_caixa_itens.php?codigo=${codigo}`;
+  formItens.action = `http://3.21.113.127/supermercado/api/api_caixa_itens.php?codigo=${codigo}`;
 
   formFinalizar = document.getElementById('finalizar_form');
   formFinalizar.method = 'POST';
-  formFinalizar.action = `http://localhost/supermercado/api/api_caixa.php?finalizar=1&codigo=${codigo}`;
+  formFinalizar.action = `http://3.21.113.127/supermercado/api/api_caixa.php?finalizar=1&codigo=${codigo}`;
 
   window.onload = () => {
       // GET ITENS
-      let url = `http://localhost/supermercado/api/api_caixa_itens.php?codigo=${codigo}`;
+      let url = `http://3.21.113.127/supermercado/api/api_caixa_itens.php?codigo=${codigo}`;
       fetch(url)
       .then(src => {
         return src.json();

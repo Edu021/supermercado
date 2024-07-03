@@ -24,7 +24,7 @@
       <div class="row">
         <div class="mx-auto col-md-6 col-10 bg-white p-5">
           <h1 class="mb-4">Entrar</h1>
-          <form action="http://localhost/supermercado/api/api_usuarios.php" method="GET">
+          <form action="http://3.21.113.127/supermercado/api/api_usuarios.php" method="GET">
             <?php
           if(isset($_GET['resultado'])) {
             if($_GET['resultado'] === 'erro') { ?>
@@ -48,6 +48,6 @@
 </html>
 <?php
   } else {
-    header("Location: http://localhost/supermercado/menu");
+    header("Location: http://3.21.113.127/supermercado/menu");
   }
 ?>

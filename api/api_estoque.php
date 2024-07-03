@@ -36,13 +36,13 @@
         while($row = mysqli_fetch_object($resultado)) {
             if ($row->cod_barra == $cod_barras) {
                 $produtoExistente = true;
-                header("Location: http://localhost/supermercado/cadastro_mercadorias?resultado=erro");
+                header("Location: http://3.21.113.127/supermercado/cadastro_mercadorias?resultado=erro");
                 break;
             }
         }
         if($produtoExistente === false) {
             mysqli_query($conexao, "insert into tb_mercadoria (nm_produto,dt_validade,vlr_compra,vlr_venda_atacado,Vlr_venda_varejo,desc_produto_porcent,qntd_lote,qntd_min_atacado,cod_barra,id_categoria) values('$nm_produto','$dt_validade',$valor_compra_un,$valor_venda_atacado_un,$valor_venda_varejo_un,'$valor_desconto','$qtd_disponivel','$qtd_minima_atacado','$cod_barras',$categoria);");
-            header("Location: http://localhost/supermercado/cadastro_mercadorias?resultado=sucesso");
+            header("Location: http://3.21.113.127/supermercado/cadastro_mercadorias?resultado=sucesso");
             die();
         }
     }
@@ -72,7 +72,7 @@
 
         mysqli_query($conexao, "UPDATE tb_mercadoria SET nm_produto = '$nm_produto', cod_barra = '$cod_barras', id_categoria = '$categoria', vlr_compra = '$valor_compra_un', dt_validade = '$dt_validade', vlr_venda_atacado = '$valor_venda_atacado_un', qntd_lote = '$qtd_disponivel', vlr_venda_varejo = '$valor_venda_varejo_un', qntd_min_atacado = '$qtd_minima_atacado', desc_produto_porcent = '$valor_desconto' WHERE id_mercadoria = '$id';");
         echo "SUCESSO ".$valor_compra_un." ".$dt_validade." ".$nm_produto;
-        header("Location: http://localhost/supermercado/listar_mercadorias?resultado=sucesso");
+        header("Location: http://3.21.113.127/supermercado/listar_mercadorias?resultado=sucesso");
         die();
     }
 

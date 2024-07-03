@@ -27,7 +27,7 @@
         while($row = mysqli_fetch_object($resultado)) {
             if($usuario == $row->login) {
                 $usuarioExistente = true;                
-                header("Location: http://localhost/supermercado/cadastro_usuario?resultado=erro");
+                header("Location: http://3.21.113.127/supermercado/cadastro_usuario?resultado=erro");
                 die();
                 break;
             }
@@ -35,10 +35,10 @@
         if($usuarioExistente === false) {
             if($senha == $confirmaSenha) {
                 $resultado = mysqli_query($conexao, "insert into tb_login(nm_funcionario,login_user,senha_user,permissao_user) values('$nome','$usuario','$senha','$permissao');");
-                header("Location: http://localhost/supermercado/cadastro_usuario?resultado=sucesso");
+                header("Location: http://3.21.113.127/supermercado/cadastro_usuario?resultado=sucesso");
                 die();
             } else {
-                header("Location: http://localhost/supermercado/cadastro_usuario?resultado=erro");
+                header("Location: http://3.21.113.127/supermercado/cadastro_usuario?resultado=erro");
                 die();
             }
         }
@@ -52,11 +52,11 @@
         $resultado = mysqli_fetch_assoc($query);
 
         if(mysqli_num_rows($query) == 0) {
-            header("Location: http://localhost/supermercado/login?resultado=erro");
+            header("Location: http://3.21.113.127/supermercado/login?resultado=erro");
         } else {
             $_SESSION['user'] = $resultado['nome'];
             $_SESSION['permissao'] = $resultado['permissao'];
-            header("Location: http://localhost/supermercado/login");
+            header("Location: http://3.21.113.127/supermercado/login");
         }
     }
 
@@ -67,14 +67,14 @@
         $login = $_POST['login'];
         $permissao = $_POST['permissao'];
         $query = mysqli_query($conexao, "UPDATE tb_login SET nm_funcionario = '$nome', login_user = '$login', permissao_user = '$permissao' WHERE id_user = $id;");
-        header("Location: http://localhost/supermercado/consultar_usuario?resultado=alterado");
+        header("Location: http://3.21.113.127/supermercado/consultar_usuario?resultado=alterado");
     }
 
     // DELETE USUARIO
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['excluir'])) {
         $id = $_GET['excluir'];
         $query = mysqli_query($conexao, "DELETE FROM tb_login where id_user = $id;");
-        header("Location: http://localhost/supermercado/consultar_usuario?resultado=excluido");
+        header("Location: http://3.21.113.127/supermercado/consultar_usuario?resultado=excluido");
     }
 
     mysqli_close($conexao);

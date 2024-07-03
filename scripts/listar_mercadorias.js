@@ -2,9 +2,9 @@ var produtos = [];
 
 window.onload = () => {
   console.log('pagina carregada');
-  const url = 'http://localhost/supermercado/api/api_estoque.php'
+  const url = 'http://3.21.113.127/supermercado/api/api_estoque.php'
 
-  fetch('http://localhost/supermercado/api/api_estoque.php')
+  fetch('http://3.21.113.127/supermercado/api/api_estoque.php')
   .then(src => {
       return src.json();
   })
@@ -51,7 +51,7 @@ function tudoDaTabela(produto) {
                   <h5 class="modal-title" id="exampleModalLabel${produto.id}">Modal title</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="http://localhost/supermercado/api/api_estoque.php" method="POST">
+                <form action="http://3.21.113.127/supermercado/api/api_estoque.php" method="POST">
                 <div class="modal-body">
                 
                     <div class="row g-2">

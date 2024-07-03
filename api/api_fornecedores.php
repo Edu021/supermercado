@@ -52,7 +52,7 @@
         $representante = $_POST['representante'];
         
         if(mysqli_query($conexao, "UPDATE tb_fornecedor SET razao_social_fornecedor = '$razao_social', cnpj_fornecedor = '$cnpj', cep_fornecedor = '$cep', num_ender_fornecedor = '$numero', email_fornecedor = '$email', tel_fornecedor = '$telefone', nm_repres_fornecedor = '$representante' WHERE cnpj_fornecedor = '$get_cnpj';")) {
-            header("Location: http://localhost/supermercado/consultar_fornecedor");
+            header("Location: http://3.21.113.127/supermercado/consultar_fornecedor");
         } else {
             echo 'erro';
         }

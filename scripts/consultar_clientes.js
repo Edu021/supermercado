@@ -2,7 +2,7 @@ var clientes = [];
 
 window.onload = () => {
   console.log('pagina carregada');
-  fetch('http://localhost/supermercado/api/api_clientes.php')
+  fetch('http://3.21.113.127/supermercado/api/api_clientes.php')
   .then(src => {
       return src.json();
   })
@@ -65,7 +65,7 @@ function tudoDaTabela(cliente) {
                   <h5 class="modal-title" id="editar_cliente_label_${id}">Editar </h5>
                   <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="http://localhost/supermercado/api/api_clientes.php?editar=${cliente.cnpj_cliente}" method="POST">
+                <form action="http://3.21.113.127/supermercado/api/api_clientes.php?editar=${cliente.cnpj_cliente}" method="POST">
                   <div class="modal-body">
                     
                       <div class="mb-3">
@@ -121,7 +121,7 @@ function tudoDaTabela(cliente) {
                   <h5 class="modal-title" id="editar_cliente_label_${id*10}">Tem certeza que quer excluir ${cliente.razao_social_cliente}</h5>
                   <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="http://localhost/supermercado/api/api_clientes.php?excluir=${cliente.cnpj_cliente}" method="POST">
+                <form action="http://3.21.113.127/supermercado/api/api_clientes.php?excluir=${cliente.cnpj_cliente}" method="POST">
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <input type="submit" class="btn btn-danger" value="Excluir">

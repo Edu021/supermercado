@@ -2,7 +2,7 @@ var usuarios = [];
 
 window.onload = () => {
   console.log('pagina carregada');
-  fetch('http://localhost/supermercado/api/api_fornecedores.php')
+  fetch('http://3.21.113.127/supermercado/api/api_fornecedores.php')
   .then(src => {
       return src.json();
   })
@@ -65,7 +65,7 @@ function tudoDaTabela(usuario) {
                   <h5 class="modal-title" id="editar_user_label_${id}">Editar fornecedor</h5>
                   <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="http://localhost/supermercado/api/api_fornecedores.php?editar=${usuario.cnpj_fornecedor}" method="POST">
+                <form action="http://3.21.113.127/supermercado/api/api_fornecedores.php?editar=${usuario.cnpj_fornecedor}" method="POST">
                   <div class="modal-body">
                 
                     <div class="form-floating mb-3">

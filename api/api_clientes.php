@@ -26,11 +26,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_GET['editar']) && !isset($
     $query = mysqli_query($conexao, "select cnpj_cliente from tb_cliente where cnpj_cliente = '$cnpj';");
     if(mysqli_num_rows($query) > 0) {
         $clienteExistente = true;                
-        header("Location: http://localhost/supermercado/cadastro_cliente?resultado=erro");
+        header("Location: http://3.21.113.127/supermercado/cadastro_cliente?resultado=erro");
     }
     if ($clienteExistente === false) {
         $resultado = mysqli_query($conexao, "insert into tb_cliente (razao_social_cliente,cnpj_cliente,cep_cliente,num_ender_cliente,email_cliente,tel_cliente,nm_repres_cliente) values('$razaoSocial','$cnpj','$cep_cliente','$numero','$email','$telefone','$nm_representante');");
-        header("Location: http://localhost/supermercado/cadastro_cliente?resultado=sucesso");
+        header("Location: http://3.21.113.127/supermercado/cadastro_cliente?resultado=sucesso");
     }
     
     die();
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['editar'])) {
                                             tel_cliente = '$telefone',
                                             nm_repres_cliente = '$nm_representante'
                                             WHERE cnpj_cliente = '$editar';");
-    header("Location: http://localhost/supermercado/listar_clientes?resultado=alterado");
+    header("Location: http://3.21.113.127/supermercado/listar_clientes?resultado=alterado");
     
     die();
 }
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['excluir'])) {
     $excluir = $_GET['excluir'];
     $resultado = mysqli_query($conexao, "DELETE FROM tb_cliente
                                             WHERE cnpj_cliente = $excluir;");
-    header("Location: http://localhost/supermercado/listar_clientes?resultado=excluido");
+    header("Location: http://3.21.113.127/supermercado/listar_clientes?resultado=excluido");
     
     die();
 }

@@ -45,14 +45,14 @@
                 mysqli_query($conexao, "insert into tb_itens_venda(id_mercadoria,qtd_produto,vlr_unit,vlr_total,id_pedido_venda) values('$nomes[$i]',$quantidades[$i],$valores[$i],$valores[$i]*$quantidades[$i],$id->id);");
             }
         }
-        header("Location: http://localhost/supermercado/cadastro_pedido_cliente?resultado=sucesso");
+        header("Location: http://3.21.113.127/supermercado/cadastro_pedido_cliente?resultado=sucesso");
     }
 
     // UPDATE STATUS
     if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['finalizar'])) {
         $id = $_GET['finalizar'];
         mysqli_query($conexao, "update tb_pedidos_venda set status = 'Finalizado' where id_pedido_venda = $id;");
-        header("Location: http://localhost/supermercado/listar_clientes_pedidos.");
+        header("Location: http://3.21.113.127/supermercado/listar_clientes_pedidos.");
     }
 
     mysqli_close($conexao);

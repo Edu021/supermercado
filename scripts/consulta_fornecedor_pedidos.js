@@ -6,7 +6,7 @@ var tudo = []
 window.onload = () => {
   // GET PEDIDOS
 
-  fetch('http://localhost/supermercado/api/api_pedidos_compra.php')
+  fetch('http://3.21.113.127/supermercado/api/api_pedidos_compra.php')
   .then(src => {
     return src.json();
   })
@@ -18,7 +18,7 @@ window.onload = () => {
 
   // GET ITENS DO PEDIDO
 
-  fetch('http://localhost/supermercado/api/api_itens_compra.php')
+  fetch('http://3.21.113.127/supermercado/api/api_itens_compra.php')
   .then(src => {
     return src.json();
   })

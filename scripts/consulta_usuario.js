@@ -2,8 +2,8 @@ var usuarios = [];
 
 window.onload = () => {
   console.log('pagina carregada');
-  const url = 'http://localhost/supermercado/api/api_usuarios.php'
-  fetch('http://localhost/supermercado/api/api_usuarios.php')
+  const url = 'http://3.21.113.127/supermercado/api/api_usuarios.php'
+  fetch('http://3.21.113.127/supermercado/api/api_usuarios.php')
   .then(src => {
       return src.json();
   })
@@ -67,7 +67,7 @@ function tudoDaTabela(usuario) {
                     <h5 class="modal-title" id="editar_user_label_${usuario.id}">Editar usuário</h5>
                     <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <form action="http://localhost/supermercado/api/api_usuarios.php?editar=${usuario.id}" method="POST">
+                  <form action="http://3.21.113.127/supermercado/api/api_usuarios.php?editar=${usuario.id}" method="POST">
                     <div class="modal-body">
                       
                         <div class="mb-3">
@@ -109,7 +109,7 @@ function tudoDaTabela(usuario) {
                     <h5 class="modal-title" id="editar_user_label_${usuario.id*10}">Tem certeza que quer excluir ${usuario.nome}?</h5>
                     <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <form action="http://localhost/supermercado/api/api_usuarios.php?excluir=${usuario.id}" method="POST">
+                  <form action="http://3.21.113.127/supermercado/api/api_usuarios.php?excluir=${usuario.id}" method="POST">
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                       <input type="submit" class="btn btn-danger" value="Excluir">
